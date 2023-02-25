@@ -74,7 +74,7 @@ EXAMPLES
  - https://postshit.online/demo_page.html (yes you can even upload renderable html!)
 
 
-Last Updated ${DATE}
+Last Updated {DATE}
 `))
 			}else{	
 				fileBytes,err := ioutil.ReadFile(uploadPath + "/" + r.URL.Path)
