@@ -8,13 +8,6 @@ jobs:
     environment: Production
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "${DATE}"
-          replace: "$(date +'%y %d, %Y')"
-          regex: false
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v0.1.7
         with:
