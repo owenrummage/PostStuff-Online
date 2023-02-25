@@ -72,6 +72,9 @@ EXAMPLES
  - https://postshit.online/PsychzNetworks.mp3
  - https://postshit.online/Quirked_Up_White_Boy.mp4
  - https://postshit.online/demo_page.html (yes you can even upload renderable html!)
+
+
+Last Updated Feb 24, 2023
 `))
 			}else{	
 				fileBytes,err := ioutil.ReadFile(uploadPath + "/" + r.URL.Path)
