@@ -105,9 +105,9 @@ Last Updated {DATE}
 		fileSize := fileHeader.Size
 		fmt.Printf("File size (bytes): %v\n", fileSize)
 
-		if(r.Header.Get("Authorization") == "Joshua"){
-			maxUploadSize = 1000 * 1024 * 1024	
-		}
+		//if(r.Header.Get("Authorization") == "Joshua"){
+		//	maxUploadSize = 1000 * 1024 * 1024	
+		//}
 
 		// validate file size
 		if fileSize > maxUploadSize {
