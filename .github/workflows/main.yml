@@ -5,6 +5,7 @@ jobs:
 
   build:
     name: Deploy to Server
+    environment: Production
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
