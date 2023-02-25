@@ -2,16 +2,23 @@ name: deploy to server
 on: [push]
 jobs:
 
+
   build:
-    name: Build
+    name: Deploy to Server
     runs-on: ubuntu-latest
-    environment: Production
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v0.1.7
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        port: ${{ secrets.PORT }}
-        script: /build.sh
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "${DATE}"
+          replace: "$(date +'%y %d, %Y')"
+          regex: false
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: /build.sh

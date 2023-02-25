@@ -74,7 +74,7 @@ EXAMPLES
  - https://postshit.online/demo_page.html (yes you can even upload renderable html!)
 
 
-Last Updated Feb 24, 2023
+Last Updated ${DATE}
 `))
 			}else{	
 				fileBytes,err := ioutil.ReadFile(uploadPath + "/" + r.URL.Path)
